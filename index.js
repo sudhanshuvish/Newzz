@@ -10,7 +10,7 @@ xhr.open('GET', `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=$
 // xhr.getResponseHeaders('Content-type', 'application/json')
 
 xhr.onload = function () {
-    if (this.status === 200) {
+    if (this.status === 426) {
         json = JSON.parse(this.responseText);
         console.log(json);
         articles = json.articles;
