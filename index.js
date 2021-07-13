@@ -1,5 +1,7 @@
+permissions-policy: interest-cohort=()
 source = 'the-times-of-india';
 apiKey = '95ffcbf189f74148a7a2c54ab12be973';
+
 
 //Grab the news container
 newsAccordion = document.getElementById('newsAccordion');
