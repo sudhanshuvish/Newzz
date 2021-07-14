@@ -30,7 +30,7 @@ xhr.onload = function () {
   <img src="${element['image']}" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">${element["title"]} </h5>
-    <p class="card-text">${element["content"]}Published at ${element["publishedAt"]}</p>
+    <p class="card-text">${element["content"]}</p>
     <p class="card-text">Published at ${element["publishedAt"]}</p>
     
     <a href="${element['url']}"target="_blank">Read more here</a>
