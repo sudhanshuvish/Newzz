@@ -1,14 +1,14 @@
-permissions-policy: interest-cohort=()
 source = 'the-times-of-india';
-apiKey = '95ffcbf189f74148a7a2c54ab12be973';
-
+apiKey = '7e215530bc9e9ea4accdd77eaeaa08f9';
+// apiKey = '95ffcbf189f74148a7a2c54ab12be973';
 
 //Grab the news container
 newsAccordion = document.getElementById('newsAccordion');
 
 //Create a getRequest
 const xhr = new XMLHttpRequest();
-xhr.open('GET', `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apiKey}`, true);
+xhr.open('GET', `https://gnews.io/api/v4/search?q=example&token=${apiKey}&lang=en&country=in`, true);
+// xhr.open('GET', `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apiKey}`, true);
 // xhr.getResponseHeaders('Content-type', 'application/json')
 
 xhr.onload = function () {
