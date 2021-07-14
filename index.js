@@ -28,6 +28,7 @@ xhr.onload = function () {
                 </h2 >
                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                 data-bs-parent="#accordionExample">
+                <img src="${element['image']}" class="img-thumbnail" alt="...">
                 <div class="accordion-body"> ${element["content"]}. <a href="${element['url']}"target="_blank">Read more here</a>
                 
                 </div>
