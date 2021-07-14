@@ -11,33 +11,37 @@ xhr.open('GET', `https://gnews.io/api/v4/search?q=example&token=${apiKey}&lang=e
 // xhr.open('GET', `https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apiKey}`, true);
 // xhr.getResponseHeaders('Content-type', 'application/json')
 
+
+
+
+
+
 xhr.onload = function () {
     if (this.status === 200) {
         json = JSON.parse(this.responseText);
         console.log(json);
         articles = json.articles;
         // console.log(articles)
-        newsHTML ="";
-        articles.forEach(function(element) {
-                news = `<div class="accordion-item">
+        newsHTML = "";
+        articles.forEach(function (element) {
+            news = `<div class="accordion-item">
                 
-                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                ${element["title"]}
-                </button>
-                </h2 >
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                data-bs-parent="#accordionExample">
-                <img src="${element['image']}" class="img-thumbnail" alt="...">
-                <div class="accordion-body"> ${element["content"]}. <a href="${element['url']}"target="_blank">Read more here</a>
                 
-                </div>
-                </div>
+  <img src="${element['image']}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${element["title"]} </h5>
+    <p class="card-text">${element["content"]}Published at ${element["publishedAt"]}</p>
+    <p class="card-text">Published at ${element["publishedAt"]}</p>
+    
+    <a href="${element['url']}"target="_blank">Read more here</a>
+  </div>
+</div>
+                
                 </div > `;
-                
-                newsHTML += news;
-            });
-            
+
+            newsHTML += news;
+        });
+
         newsAccordion.innerHTML = newsHTML;
 
     }
